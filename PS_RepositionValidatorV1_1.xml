@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions name="repositionValidator" targetNamespace="http://www.amx.com/co/service/mobile/aplicationIntegration/RepositionValidator/v1.0" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.amx.com/co/schema/mobile/aplicationIntegration/RepositionValidator/v1.0" xmlns:WL5G3N2="http://www.amx.com/co/service/mobile/aplicationIntegration/RepositionValidator/v1.0" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/">
+  <WL5G3N0:types>
+    <xsd:schema elementFormDefault="qualified" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.amx.com/co/service/mobile/aplicationIntegration/RepositionValidator/v1.0" xmlns:val="http://www.amx.com/co/schema/mobile/aplicationIntegration/RepositionValidator/v1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.amx.com/co/schema/mobile/aplicationIntegration/RepositionValidator/v1.0" schemaLocation="PS_RepositionValidatorV1.xsd"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="RepositionValidatorRequest">
+    <WL5G3N0:part element="WL5G3N1:RepositionValidatorRequest" name="RepositionValidatorRequest"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="RepositionValidatorResponse">
+    <WL5G3N0:part element="WL5G3N1:RepositionValidatorResponse" name="RepositionValidatorResponse"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResetPropertiesRequest">
+    <WL5G3N0:part element="WL5G3N1:ResetPropertiesRequest" name="ResetPropertiesRequest"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResetPropertiesResponse">
+    <WL5G3N0:part element="WL5G3N1:ResetPropertiesResponse" name="ResetPropertiesResponse"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="HeaderRequest">
+    <WL5G3N0:part element="WL5G3N1:headerRequest" name="headerRequest"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="HeaderResponse">
+    <WL5G3N0:part element="WL5G3N1:headerResponse" name="headerResponse"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="Fault">
+    <WL5G3N0:part element="WL5G3N1:faultMessage" name="fault"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="RepositionValidatorInterface">
+    <WL5G3N0:operation name="repositionValidator">
+      <WL5G3N0:input message="WL5G3N2:RepositionValidatorRequest"/>
+      <WL5G3N0:output message="WL5G3N2:RepositionValidatorResponse"/>
+      <WL5G3N0:fault message="WL5G3N2:Fault" name="fault"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="resetProperties">
+      <WL5G3N0:input message="WL5G3N2:ResetPropertiesRequest"/>
+      <WL5G3N0:output message="WL5G3N2:ResetPropertiesResponse"/>
+      <WL5G3N0:fault message="WL5G3N2:Fault" name="fault"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="RepositionValidatorSOAPBinding" type="WL5G3N2:RepositionValidatorInterface">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="repositionValidator">
+      <WL5G3N3:operation soapAction="http://www.amx.com/co/schema/mobile/aplicationIntegration/RepositionValidator/v1.0/repositionValidator" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body parts="RepositionValidatorRequest" use="literal"/>
+        <WL5G3N3:header message="WL5G3N2:HeaderRequest" part="headerRequest" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body parts="RepositionValidatorResponse" use="literal"/>
+        <WL5G3N3:header message="WL5G3N2:HeaderResponse" part="headerResponse" use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="fault">
+        <WL5G3N3:fault name="fault" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="resetProperties">
+      <WL5G3N3:operation soapAction="http://www.amx.com/co/schema/mobile/aplicationIntegration/RepositionValidator/v1.0/resetPropiedades" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body parts="ResetPropertiesRequest" use="literal"/>
+        <WL5G3N3:header message="WL5G3N2:HeaderRequest" part="headerRequest" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body parts="ResetPropertiesResponse" use="literal"/>
+        <WL5G3N3:header message="WL5G3N2:HeaderResponse" part="headerResponse" use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="fault">
+        <WL5G3N3:fault name="fault" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="RepositionValidatorSOAPBindingQSService">
+    <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+    <WL5G3N0:port binding="WL5G3N2:RepositionValidatorSOAPBinding" name="RepositionValidatorSOAPBindingQSPort">
+      <WL5G3N3:address location="http://localhost:4000/wsdl2?wsdl"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.0-b170407.2038 svn-revision#2eaca54d17a59d265c6fe886b7fd0027836c766c. -->
+<xsd:schema targetNamespace="http://service.claro.com.co/" xmlns:ns0="http://service.claro.com.co/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="resetPropiedades">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="usuario" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="psw" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    
+    <xsd:element name="resetPropiedadesResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="return" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element> 
+</xsd:schema>

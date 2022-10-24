@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="Calculator Prueba XD" targetNamespace="http://localhost:4000/wsdl?wsdl"
+  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+  xmlns="http://localhost:4000/wsdl?wsdl"
+  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:s="http://www.w3.org/2001/XMLSchema">
+
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="intA" type="s:int" />
+    <wsdl:part name="intB" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="AddResult" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapIn">
+    <wsdl:part name="intA" type="s:int" />
+    <wsdl:part name="intB" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapOut">
+    <wsdl:part name="SubtractResult" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapIn">
+    <wsdl:part name="intA" type="s:int" />
+    <wsdl:part name="intB" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapOut">
+    <wsdl:part name="MultiplyResult" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="DivideSoapIn">
+    <wsdl:part name="intA" type="s:int" />
+    <wsdl:part name="intB" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="DivideSoapOut">
+    <wsdl:part name="DivideResult" type="s:int" />
+  </wsdl:message>
+
+  <wsdl:portType name="CalculatorSoapPortType">
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds two integers. This is a test WebService. ©DNE Online</wsdl:documentation>
+      <wsdl:input message="AddSoapIn" />
+      <wsdl:output message="AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <wsdl:input message="SubtractSoapIn" />
+      <wsdl:output message="SubtractSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <wsdl:input message="MultiplySoapIn" />
+      <wsdl:output message="MultiplySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <wsdl:input message="DivideSoapIn" />
+      <wsdl:output message="DivideSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="CalculatorSoapBinding" type="CalculatorSoapPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="Add"/>
+      <wsdl:input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap:operation soapAction="Subtract"/>
+      <wsdl:input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap:operation soapAction="Multiply"/>
+      <wsdl:input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap:operation soapAction="Divide"/>
+      <wsdl:input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:binding name="CalculatorSoap12Binding" type="CalculatorSoapPortType">
+    <soap12:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="Add"/>
+      <wsdl:input>
+        <soap12:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap12:operation soapAction="Subtract"/>
+      <wsdl:input>
+        <soap12:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap12:operation soapAction="Multiply"/>
+      <wsdl:input>
+        <soap12:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap12:operation soapAction="Divide"/>
+      <wsdl:input>
+        <soap12:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="Calculator">
+    <wsdl:port name="CalculatorSoap" binding="CalculatorSoapBinding">
+      <soap:address location="http://localhost:4000/wsdl?wsdl" />
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap12" binding="CalculatorSoap12Binding">
+      <soap12:address location="http://localhost:4000/wsdl?wsdl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

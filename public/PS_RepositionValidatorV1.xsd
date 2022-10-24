@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.amx.com/co/schema/mobile/aplicationIntegration/RepositionValidator/v1.0" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.amx.com/co/schema/mobile/aplicationIntegration/RepositionValidator/v1.0" xmlns:entcom="http://www.amx.com/co/schema/mobile/common/aplicationIntegration/Comunes/v1.0">
+  <xsd:annotation>
+    <xsd:documentation>Author: Miguel Angel Zapata
+  email: zapatama@globalhitss.com
+  Date: 28/03/2019
+  Version: 1.0
+  Purpose: Define WSRepositionValidator Service operations structure
+  Track changes: Creation. Released first version
+  Observations: This changes it required by Scrum Cell project.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import schemaLocation="PS_RepositionValidatorV1_1.xsd" namespace="http://www.amx.com/co/schema/mobile/common/aplicationIntegration/Comunes/v1.0"/>
+  <xsd:element name="RepositionValidatorRequest" type="tns:RepositionValidatorRequest">
+    <xsd:annotation>
+      <xsd:documentation>Define entrada (request) de operacion repositionValidator.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RepositionValidatorResponse" type="tns:RepositionValidatorResponse">
+    <xsd:annotation>
+      <xsd:documentation>Define salida (response) de operacion repositionValidator.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ResetPropertiesRequest" type="tns:ResetPropertiesRequest">
+    <xsd:annotation>
+      <xsd:documentation>Define entrada (request) de operacion resetProperties.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ResetPropertiesResponse" type="tns:ResetPropertiesResponse">
+    <xsd:annotation>
+      <xsd:documentation>Define salida (response) de operacion resetProperties.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="headerRequest" type="entcom:HeaderRequest">
+    <xsd:annotation>
+      <xsd:documentation>Define estructura header de entrada del servicio.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="headerResponse" type="entcom:HeaderResponse">
+    <xsd:annotation>
+      <xsd:documentation>Define estructura header de salida del servicio.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="faultMessage" type="entcom:FaultMessageType">
+    <xsd:annotation>
+      <xsd:documentation>Define estructura Fault del servicio.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="RepositionValidatorRequest">
+    <xsd:sequence>
+      <xsd:element name="min" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="document" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="userRol" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="userProfile" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="userName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="userCac" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="coordiatorRol" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="isQuote" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="isDomicile" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="uuid" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="materialCode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="contractId" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="planType" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cfmValue" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="monthsLastReposition" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="tmCode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CurrentPackageList" type="tns:CurrentPackageList" minOccurs="0"/>
+      <xsd:element name="PocIndicatorList" type="tns:PocIndicatorList" minOccurs="0"/>
+      <xsd:element name="isImeiStolen" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="documentType" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="regionLyne" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="isVip" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="antiqueLine" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="autorizeCentralRisk" type="xsd:boolean" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RepositionValidatorResponse">
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="note" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="globalResult" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="ValidateReserveResult" type="tns:ValidateReserveResult" minOccurs="0"/>
+      <xsd:element name="GetPriceResult" type="tns:GetPriceResult" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ValidateReserveResult">
+    <xsd:sequence>
+      <xsd:element name="paymentBehaviorId" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="paymentBehavior" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="creditScore" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="financedValue" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="isVip" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="contractState" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="isPostpaid" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="moraStatus" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="isStolenIccid" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="isStolenImei" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="iccid" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetPriceResult">
+    <xsd:sequence>
+      <xsd:element name="isApplyIva" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="equipmentReference" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="stagePrice" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="priceWithIva" type="xsd:decimal" minOccurs="0"/>
+      <xsd:element name="priceWithoutIva" type="xsd:decimal" minOccurs="0"/>
+      <xsd:element name="finance" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="financeQoutes" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="QuotesEquipment" type="tns:QuotesEquipment" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="QuotesEquipment">
+    <xsd:sequence>
+      <xsd:element name="defferValue" type="xsd:decimal"/>
+      <xsd:element name="financedIva" type="xsd:unsignedByte"/>
+      <xsd:element name="priceFinancedWithoutIva" type="xsd:decimal"/>
+      <xsd:element name="priceFinancedWithIva" type="xsd:decimal"/>
+      <xsd:element name="initialQuoteWithoutIva" type="xsd:decimal"/>
+      <xsd:element name="initialQuoteWithIva" type="xsd:decimal"/>
+      <xsd:element name="percentInitialQuote" type="xsd:decimal"/>
+      <xsd:element name="percent" type="xsd:decimal"/>
+      <xsd:element name="quoteNumber" type="xsd:unsignedByte"/>
+      <xsd:element name="quoteValue" type="xsd:decimal"/>
+      <xsd:element name="sourcePercentInitialQuote" type="xsd:string"/>
+      <xsd:element name="iva" type="xsd:decimal"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PocIndicatorList">
+    <xsd:sequence>
+      <xsd:element name="productCodeActivePlan" type="xsd:int" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CurrentPackageList">
+    <xsd:sequence>
+      <xsd:element name="CurrentPackage" type="tns:CurrentPackage" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PaymentPlan">
+    <xsd:sequence>
+      <xsd:element name="valueToCapital" type="xsd:decimal"/>
+      <xsd:element name="initialPaymentValue" type="xsd:decimal"/>
+      <xsd:element name="secureFinancingValue" type="xsd:decimal"/>
+      <xsd:element name="interestValue" type="xsd:decimal"/>
+      <xsd:element name="interestIva" type="xsd:decimal"/>
+      <xsd:element name="monthlyFeeValue" type="xsd:decimal"/>
+      <xsd:element name="paymentDate" type="xsd:string"/>
+      <xsd:element name="numberQuote" type="xsd:string"/>
+      <xsd:element name="remainingAmount" type="xsd:decimal"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CurrentPackage">
+    <xsd:sequence>
+      <xsd:element name="cfmPackage" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="des" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="description" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="snCode" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="spCode" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="tmCode" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResetPropertiesRequest">
+    <xsd:sequence>
+      <xsd:element name="user" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="password" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="idTrazability" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResetPropertiesResponse">
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

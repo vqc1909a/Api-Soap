@@ -1,0 +1,21 @@
+{
+  "name": "api-soap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js"
+  },
+  "author": "vqc1909a",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "soap": "^0.45.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

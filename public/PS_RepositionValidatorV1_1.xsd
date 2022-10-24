@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.amx.com/co/schema/mobile/common/aplicationIntegration/Comunes/v1.0" elementFormDefault="qualified" xmlns:tns="http://www.amx.com/co/schema/mobile/common/aplicationIntegration/Comunes/v1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="headerRequest" type="tns:HeaderRequest"/>
+  <xsd:element name="headerResponse" type="tns:HeaderResponse"/>
+  <xsd:element name="FaultMessage" type="tns:FaultMessageType"/>
+  <xsd:complexType name="TipoComunType">
+    <xsd:sequence>
+      <xsd:element name="codigo" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="descripcion" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FaultMessageType">
+    <xsd:sequence>
+      <xsd:element name="errorcode" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="severity" type="tns:SeverityType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="SeverityType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="FATAL"/>
+      <xsd:enumeration value="ERROR"/>
+      <xsd:enumeration value="INFO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="HeaderRequest">
+    <xsd:sequence>
+      <xsd:element name="channel" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="transactionId" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ipApplication" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HeaderResponse">
+    <xsd:sequence>
+      <xsd:element name="channel" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="responseDate" minOccurs="1" maxOccurs="1" type="xsd:dateTime"/>
+      <xsd:element name="transactionIdCon" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+      <xsd:element name="transactionIdExp" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
